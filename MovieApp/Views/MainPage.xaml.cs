@@ -1,4 +1,5 @@
-﻿using MovieApp.ViewModels;
+﻿using MovieApp.Services.Shows;
+using MovieApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,6 +27,12 @@ namespace MovieApp
         public MainPage()
         {
             this.InitializeComponent();
+            FetchData();
+        }
+
+        public async void FetchData()
+        {
+            var data = await new ShowService().GetRecommendedShows();
         }
     }
 }
