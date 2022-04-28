@@ -1,4 +1,5 @@
 ﻿using MovieApp.Models.Shows;
+using MovieApp.Services.API;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace MovieApp.Services.Shows
 {
     public interface IShowService
     {
-        Task<ShowRecommendation[]> GetRecommendedShows();
+        Task<PagedResponse<PopularShow>> GetPopularShows();
     }
 }

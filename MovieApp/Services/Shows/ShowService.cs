@@ -1,4 +1,5 @@
 ﻿using MovieApp.Models.Shows;
+using MovieApp.Services.API;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,9 @@ namespace MovieApp.Services.Shows
     {
         private readonly ApiService apiService = new ApiService();
 
-        public async Task<ShowRecommendation[]> GetRecommendedShows()
+        public async Task<PagedResponse<PopularShow>> GetPopularShows()
         {
-            return await apiService.GetAsync<ShowRecommendation[]>("shows/recommended");
+            return await apiService.GetAsync<PagedResponse<PopularShow>>("tv/popular");
         }
     }
 }
