@@ -8,9 +8,8 @@
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    
     <Grid>
-        <TextBlock Text="Hello World!" />
-        <Button Content="Click" />
+        
     </Grid>
 </Page>

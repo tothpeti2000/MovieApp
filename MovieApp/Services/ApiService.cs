@@ -10,17 +10,13 @@ namespace MovieApp.Services
 {
     public class ApiService
     {
-        private readonly Uri baseURL = new Uri("https://api.trakt.tv");
-        private readonly string apiKey = "b0c4acf1d122aedc3837c936541d7b20c3ff4f3c8f3369f8df410b1ca6dd273a";
-        private readonly int apiVersion = 2;
+        private readonly Uri baseURL = new Uri("https://api.themoviedb.org/3");
+        private readonly string apiKey = "780aae170739c0d86c29396d5f6d279f";
 
         public async Task<T> GetAsync<T>(string path)
         {
             using (var client = new HttpClient())
             {
-                client.DefaultRequestHeaders.Add("trakt-api-version", apiVersion.ToString());
-                client.DefaultRequestHeaders.Add("trakt-api-key", apiKey);
-
                 var uri = new Uri(baseURL, path);
 
                 var response = await client.GetAsync(uri);
