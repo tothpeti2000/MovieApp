@@ -32,7 +32,7 @@ namespace MovieApp
 
         public async void FetchData()
         {
-            var data = await new ShowService().GetRecommendedShows();
+            var data = await new ShowService().GetShowCreditsByID(100);
         }
     }
 }

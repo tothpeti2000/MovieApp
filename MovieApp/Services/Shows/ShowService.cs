@@ -12,19 +12,19 @@ namespace MovieApp.Services.Shows
     {
         private readonly ApiService apiService = new ApiService();
 
-        public async Task<PagedResponse<PopularShow>> GetPopularShows()
+        public async Task<PagedResponse<PopularShow>> GetPopularShowsAsync()
         {
             return await apiService.GetAsync<PagedResponse<PopularShow>>("tv/popular");
         }
 
-        public Task<ShowDetails> GetShowDetailsByID(int ID)
+        public async Task<ShowDetails> GetShowDetailsByIDAsync(int ID)
         {
-            return apiService.GetAsync<ShowDetails>($"tv/{ID}");
+            return await apiService.GetAsync<ShowDetails>($"tv/{ID}");
         }
 
-        public Task<Credits> GetShowCreditsByID(int ID)
+        public async Task<Credits> GetShowCreditsByIDAsync(int ID)
         {
-            return apiService.GetAsync<Credits>($"tv/{ID}/credits");
+            return await apiService.GetAsync<Credits>($"tv/{ID}/credits");
         }
     }
 }

@@ -119,8 +119,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Shows\ShowRecommendation.cs" />
-    <Compile Include="Services\ApiService.cs" />
+    <Compile Include="Models\Shows\Credits.cs" />
+    <Compile Include="Models\Shows\PopularShow.cs" />
+    <Compile Include="Models\Shows\ShowDetails.cs" />
+    <Compile Include="Services\API\ApiService.cs" />
+    <Compile Include="Services\API\PagedResponse.cs" />
     <Compile Include="Services\Shows\IShowService.cs" />
     <Compile Include="Services\Shows\ShowService.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
