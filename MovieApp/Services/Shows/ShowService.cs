@@ -16,5 +16,10 @@ namespace MovieApp.Services.Shows
         {
             return await apiService.GetAsync<PagedResponse<PopularShow>>("tv/popular");
         }
+
+        public Task<ShowDetails> GetShowDetailsByID(int ID)
+        {
+            return apiService.GetAsync<ShowDetails>($"tv/{ID}");
+        }
     }
 }

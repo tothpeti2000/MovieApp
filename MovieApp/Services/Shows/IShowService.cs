@@ -11,5 +11,6 @@ namespace MovieApp.Services.Shows
     public interface IShowService
     {
         Task<PagedResponse<PopularShow>> GetPopularShows();
+        Task<ShowDetails> GetShowDetailsByID(int ID);
     }
 }
