@@ -12,5 +12,6 @@ namespace MovieApp.Services.Shows
     {
         Task<PagedResponse<PopularShow>> GetPopularShows();
         Task<ShowDetails> GetShowDetailsByID(int ID);
+        Task<Credits> GetShowCreditsByID(int ID);
     }
 }

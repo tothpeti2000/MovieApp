@@ -21,5 +21,10 @@ namespace MovieApp.Services.Shows
         {
             return apiService.GetAsync<ShowDetails>($"tv/{ID}");
         }
+
+        public Task<Credits> GetShowCreditsByID(int ID)
+        {
+            return apiService.GetAsync<Credits>($"tv/{ID}/credits");
+        }
     }
 }
