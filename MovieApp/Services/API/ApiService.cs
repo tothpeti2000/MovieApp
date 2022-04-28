@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MovieApp.Services.API
 {
-    public class ApiService
+    public class ApiService: IApiService
     {
         // API URL and apiKey which is required for all requests
         private readonly Uri baseURL = new Uri("https://api.themoviedb.org/3/");

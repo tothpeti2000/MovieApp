@@ -123,6 +123,7 @@
     <Compile Include="Models\Shows\PopularShow.cs" />
     <Compile Include="Models\Shows\ShowDetails.cs" />
     <Compile Include="Services\API\ApiService.cs" />
+    <Compile Include="Services\API\IApiService.cs" />
     <Compile Include="Services\API\PagedResponse.cs" />
     <Compile Include="Services\Shows\IShowService.cs" />
     <Compile Include="Services\Shows\ShowService.cs" />
