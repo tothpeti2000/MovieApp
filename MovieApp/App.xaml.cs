@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using MovieApp.Services.API;
+using MovieApp.Services.Shows;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,6 +25,8 @@ namespace MovieApp
     /// </summary>
     sealed partial class App : Application
     {
+        public IServiceScope Container { get; }
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -30,6 +35,7 @@ namespace MovieApp
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            Container = ConfigureDI();
         }
 
         /// <summary>
@@ -95,6 +101,18 @@ namespace MovieApp
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        private IServiceScope ConfigureDI()
+        {
+            var serviceCollection = new ServiceCollection();
+
+            serviceCollection.AddScoped<IApiService, ApiService>();
+            serviceCollection.AddScoped<IShowService, ShowService>();
+
+            var serviceProvider = serviceCollection.BuildServiceProvider();
+
+            return serviceProvider.CreateScope();
         }
     }
 }
