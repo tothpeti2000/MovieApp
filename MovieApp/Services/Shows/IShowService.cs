@@ -13,5 +13,6 @@ namespace MovieApp.Services.Shows
         Task<PagedResponse<PopularShow>> GetPopularShowsAsync();
         Task<ShowDetails> GetShowDetailsByIDAsync(int ID);
         Task<Credits> GetShowCreditsByIDAsync(int ID);
+        Task<PagedResponse<ShowReview>> GetShowReviewsByIDAsync(int ID);
     }
 }
