@@ -41,5 +41,22 @@ namespace MovieApp.Services.Shows
         {
             return await apiService.GetAsync<PagedResponse<SimilarShow>>($"tv/{ID}/similar");
         }
+
+        public async Task<PagedResponse<SimilarShow>> GetShowsWithGenreIDAsync(int genreID)
+        {
+            return await apiService.GetAsync<PagedResponse<SimilarShow>>($"discover/tv?with_genres={genreID}");
+        }
+
+        public async Task<PagedResponse<SimilarShow>> GetShowsWithKeywordIDsAsync(int[] keywordIDs)
+        {
+            string totalKeywordIDs = "";
+
+            foreach (var ID in keywordIDs)
+            {
+                totalKeywordIDs += $"{ID},";
+            }
+
+            return await apiService.GetAsync<PagedResponse<SimilarShow>>($"discover/tv?with_keywords={totalKeywordIDs}");
+        }
     }
 }

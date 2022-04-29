@@ -15,5 +15,7 @@ namespace MovieApp.Services.Shows
         Task<Credits> GetShowCreditsByIDAsync(int ID);
         Task<PagedResponse<ShowReview>> GetShowReviewsByIDAsync(int ID);
         Task<PagedResponse<SimilarShow>> GetSimilarShowsByIDAsync(int ID);
+        Task<PagedResponse<SimilarShow>> GetShowsWithGenreIDAsync(int genreID);
+        Task<PagedResponse<SimilarShow>> GetShowsWithKeywordIDsAsync(int[] keywordIDs);
     }
 }
