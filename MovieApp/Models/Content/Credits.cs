@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieApp.Models.Shows
+namespace MovieApp.Models.Content
 {
     public class Credits
     {
-        public int ID { get; set; }
-        public Cast[] Cast { get; set; }
-        public Crew[] Crew { get; set; }
+        public Cast[] cast { get; set; }
+        public Crew[] crew { get; set; }
+        public int id { get; set; }
     }
 
     public class Cast
@@ -23,6 +23,7 @@ namespace MovieApp.Models.Shows
         public string original_name { get; set; }
         public float popularity { get; set; }
         public string profile_path { get; set; }
+        public int cast_id { get; set; }
         public string character { get; set; }
         public string credit_id { get; set; }
         public int order { get; set; }
