@@ -36,5 +36,10 @@ namespace MovieApp.Services.Shows
         {
             return await apiService.GetAsync<PagedResponse<ShowReview>>($"tv/{ID}/reviews");
         }
+
+        public async Task<PagedResponse<SimilarShow>> GetSimilarShowsByIDAsync(int ID)
+        {
+            return await apiService.GetAsync<PagedResponse<SimilarShow>>($"tv/{ID}/similar");
+        }
     }
 }
