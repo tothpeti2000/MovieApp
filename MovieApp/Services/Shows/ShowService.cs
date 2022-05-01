@@ -44,9 +44,9 @@ namespace MovieApp.Services.Shows
             return await apiService.GetAsync<PagedResponse<ShortShowDetails>>($"discover/tv?with_keywords={fullKeywordIDs}");
         }
 
-        public Task<PagedResponse<T>> GetByQueryAsync()
+        public async Task<PagedResponse<ShortShowDetails>> GetByQueryAsync(string query, int page = 1)
         {
-            throw new NotImplementedException();
+            return await apiService.GetAsync<PagedResponse<ShortShowDetails>>($"search/tv?query={query}&page={page}");
         }
 
         public async Task<Credits> GetCreditsByIDAsync(int ID)
