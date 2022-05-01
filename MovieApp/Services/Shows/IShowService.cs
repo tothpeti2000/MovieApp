@@ -18,7 +18,7 @@ namespace MovieApp.Services.Shows
         Task<Credits> GetCreditsByIDAsync(int ID);
         Task<PagedResponse<ShortShowDetails>> GetSimilarByIDAsync(int ID, int page = 1);
         Task<ExtendedSeasonDetails> GetSeasonDetailsByIDAsync(int ID, int season);
-        Task<> GetEpisodeDetailsByIDAsync(int ID, int season, int episode);
+        Task<ExtendedEpisodeDetails> GetEpisodeDetailsByIDAsync(int ID, int season, int episode);
 
         Task<> GetGenresAsync();
     }
