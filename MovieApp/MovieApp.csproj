@@ -120,6 +120,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Shows\Credits.cs" />
+    <Compile Include="Models\Shows\ExtendedSeasonDetails.cs" />
     <Compile Include="Models\Shows\ShortShowDetails.cs" />
     <Compile Include="Models\Shows\ExtendedShowDetails.cs" />
     <Compile Include="Services\API\ApiService.cs" />

@@ -35,12 +35,12 @@ namespace MovieApp.Models.Shows
         public string LastAirDate { get; set; }
 
         [JsonProperty("last_episode_to_air")]
-        public Episode LastEpisodeToAir { get; set; }
+        public ShortEpisodeDetails LastEpisodeToAir { get; set; }
 
         public string Name { get; set; }
 
         [JsonProperty("next_episode_to_air")]
-        public Episode NextEpisodeToAir { get; set; }
+        public ShortEpisodeDetails NextEpisodeToAir { get; set; }
 
         public Network[] Networks { get; set; }
 
@@ -71,7 +71,7 @@ namespace MovieApp.Models.Shows
         [JsonProperty("production_countries")]
         public Country[] ProductionCountries { get; set; }
 
-        public Season[] Seasons { get; set; }
+        public ShortSeasonDetails[] Seasons { get; set; }
 
         [JsonProperty("spoken_languages")]
         public Language[] SpokenLanguages { get; set; }
@@ -87,7 +87,7 @@ namespace MovieApp.Models.Shows
         public int VoteCount { get; set; }
     }
 
-    public class Episode
+    public class ShortEpisodeDetails
     {
         public int ID { get; set; }
 
@@ -163,7 +163,7 @@ namespace MovieApp.Models.Shows
         public string Name { get; set; }
     }
 
-    public class Season
+    public class ShortSeasonDetails
     {
         public int ID { get; set; }
 

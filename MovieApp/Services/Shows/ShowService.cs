@@ -59,9 +59,9 @@ namespace MovieApp.Services.Shows
             return await apiService.GetAsync<PagedResponse<ShortShowDetails>>($"tv/{ID}/similar?page={page}");
         }
 
-        public Task<TResult> GetSeasonDetailsByIDAsync(int ID, int season)
+        public async Task<ExtendedSeasonDetails> GetSeasonDetailsByIDAsync(int ID, int season)
         {
-            throw new NotImplementedException();
+            return await apiService.GetAsync<ExtendedSeasonDetails>($"tv/{ID}/season/{season}");
         }
 
         public Task<TResult> GetEpisodeDetailsByIDAsync(int ID, int season, int episode)
