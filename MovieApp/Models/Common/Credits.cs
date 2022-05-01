@@ -9,7 +9,6 @@ namespace MovieApp.Models.Shows
 {
     public class Credits
     {
-        [JsonProperty("")]
         public int ID { get; set; }
         public Cast[] Cast { get; set; }
         public Crew[] Crew { get; set; }

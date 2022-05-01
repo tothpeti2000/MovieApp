@@ -1,4 +1,5 @@
-﻿using MovieApp.Services.Shows;
+﻿using MovieApp.Services.API;
+using MovieApp.Services.Shows;
 using MovieApp.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace MovieApp
 
         public async void FetchData()
         {
-            var data = await new ShowService().GetShowCreditsByID(100);
+            var data = await new ShowService(new ApiService()).GetDetailsByIDAsync(1418);
         }
     }
 }

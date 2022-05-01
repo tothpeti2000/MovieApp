@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MovieApp.Models.Common;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -136,49 +137,6 @@ namespace MovieApp.Models.Shows
         public string LogoPath { get; set; }
 
         [JsonProperty("origin_country")]
-        public string[] OriginCountry { get; set; }
-    }
-
-    public class Company
-    {
-        public int ID { get; set; }
-
-        [JsonProperty("logo_path")]
-        public string LogoPath { get; set; }
-
-        public string Name { get; set; }
-
-        [JsonProperty("origin_country")]
-        public string[] OriginCountry { get; set; }
-    }
-
-    public class Country
-    {
-        public string Name { get; set; }
-    }
-
-    public class ShortSeasonDetails
-    {
-        public int ID { get; set; }
-
-        [JsonProperty("air_date")]
-        public string AirDate { get; set; }
-
-        [JsonProperty("episode_count")]
-        public int EpisodeCount { get; set; }
-
-        public string Name { get; set; }
-        public string Overview { get; set; }
-
-        [JsonProperty("poster_path")]
-        public string PosterPath { get; set; }
-
-        [JsonProperty("season_number")]
-        public int SeasonNumber { get; set; }
-    }
-
-    public class Language
-    {
-        public string Name { get; set; }
+        public string OriginCountry { get; set; }
     }
 }
