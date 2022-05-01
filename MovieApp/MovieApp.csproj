@@ -120,8 +120,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Shows\Credits.cs" />
-    <Compile Include="Models\Shows\PopularShow.cs" />
-    <Compile Include="Models\Shows\ShowDetails.cs" />
+    <Compile Include="Models\Shows\ShortShowDetails.cs" />
+    <Compile Include="Models\Shows\ExtendedShowDetails.cs" />
     <Compile Include="Services\API\ApiService.cs" />
     <Compile Include="Services\API\IApiService.cs" />
     <Compile Include="Services\API\PagedResponse.cs" />

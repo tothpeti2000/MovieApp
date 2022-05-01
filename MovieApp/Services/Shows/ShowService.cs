@@ -27,14 +27,21 @@ namespace MovieApp.Services.Shows
             return await apiService.GetAsync<ExtendedShowDetails>($"tv/{ID}");
         }
 
-        public Task<PagedResponse<T>> GetByGenreAsync()
+        public async Task<PagedResponse<ShortShowDetails>> GetByGenreAsync(int genreID)
         {
-            throw new NotImplementedException();
+            return await apiService.GetAsync<PagedResponse<ShortShowDetails>>($"discover/tv?with_genres={genreID}");
         }
 
-        public Task<PagedResponse<T>> GetByKeywordsAsync()
+        public async Task<PagedResponse<ShortShowDetails>> GetByKeywordsAsync(int[] keywordIDs)
         {
-            throw new NotImplementedException();
+            string fullKeywordIDs = "";
+
+            foreach (var keywordID in keywordIDs)
+            {
+                fullKeywordIDs += $"{keywordID},";
+            }
+
+            return await apiService.GetAsync<PagedResponse<ShortShowDetails>>($"discover/tv?with_keywords={fullKeywordIDs}");
         }
 
         public Task<PagedResponse<T>> GetByQueryAsync()

@@ -12,8 +12,8 @@ namespace MovieApp.Services.Shows
     {
         Task<PagedResponse<ShortShowDetails>> GetPopularAsync(int page = 1);
         Task<ExtendedShowDetails> GetDetailsByIDAsync(int ID);
-        Task<PagedResponse<>> GetByGenreAsync();
-        Task<PagedResponse<>> GetByKeywordsAsync();
+        Task<PagedResponse<ShortShowDetails>> GetByGenreAsync(int genreID);
+        Task<PagedResponse<ShortShowDetails>> GetByKeywordsAsync(int[] keywordIDs);
         Task<PagedResponse<>> GetByQueryAsync();
         Task<Credits> GetCreditsByIDAsync(int ID);
         Task<PagedResponse<>> GetSimilarAsync();
