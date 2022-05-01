@@ -17,29 +17,54 @@ namespace MovieApp.Services.Shows
             this.apiService = apiService;
         }
 
-        public async Task<PagedResponse<PopularShow>> GetPopularShowsAsync()
+        public async Task<PagedResponse<PopularShow>> GetPopularAsync()
         {
             return await apiService.GetAsync<PagedResponse<PopularShow>>("tv/popular");
         }
 
-        public async Task<ShowDetails> GetShowDetailsByIDAsync(int ID)
+        public async Task<ShowDetails> GetDetailsByIDAsync(int ID)
         {
             return await apiService.GetAsync<ShowDetails>($"tv/{ID}");
         }
 
-        public async Task<Credits> GetShowCreditsByIDAsync(int ID)
+        public Task<PagedResponse<T>> GetByGenreAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<PagedResponse<T>> GetByKeywordsAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<PagedResponse<T>> GetByQueryAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<Credits> GetCreditsByIDAsync(int ID)
         {
             return await apiService.GetAsync<Credits>($"tv/{ID}/credits");
         }
 
-        public async Task<PagedResponse<ShowReview>> GetShowReviewsByIDAsync(int ID)
+        public Task<PagedResponse<T>> GetSimilarAsync()
         {
-            return await apiService.GetAsync<PagedResponse<ShowReview>>($"tv/{ID}/reviews");
+            throw new NotImplementedException();
         }
 
-        public async Task<PagedResponse<SimilarShow>> GetSimilarShowsByIDAsync(int ID)
+        public Task<TResult> GetSeasonDetailsByIDAsync(int ID, int season)
         {
-            return await apiService.GetAsync<PagedResponse<SimilarShow>>($"tv/{ID}/similar");
+            throw new NotImplementedException();
+        }
+
+        public Task<TResult> GetEpisodeDetailsByIDAsync(int ID, int season, int episode)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TResult> GetGenresAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }
