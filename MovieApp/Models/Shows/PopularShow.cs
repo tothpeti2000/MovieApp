@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,17 +10,38 @@ namespace MovieApp.Models.Shows
     public class PopularShow
     {
         public int ID { get; set; }
-        public string Backdrop_Path { get; set; }
-        public string First_Air_Date { get; set; }
-        public int[] Genre_Ids { get; set; }
-        public string Original_Language { get; set; }
-        public string Original_Name { get; set; }
+
+        [JsonProperty("backdrop_path")]
+        public string BackdropPath { get; set; }
+
+        [JsonProperty("first_air_date")]
+        public string FirstAirDate { get; set; }
+
+        [JsonProperty("genre_ids")]
+        public int[] GenreIDs { get; set; }
+
+        [JsonProperty("original_language")]
+        public string OriginalLanguage { get; set; }
+
+        [JsonProperty("original_name")]
+        public string OriginalName { get; set; }
+
         public string Overview { get; set; }
-        public string[] Origin_Country { get; set; }
-        public string Poster_Path { get; set; }
+
+        [JsonProperty("origin_country")]
+        public string[] OriginCountry { get; set; }
+
+        [JsonProperty("poster_path")]
+        public string PosterPath { get; set; }
+
         public float Popularity { get; set; }
+
         public string Name { get; set; }
-        public float Vote_Average { get; set; }
-        public int Vote_Count { get; set; }
+
+        [JsonProperty("vote_average")]
+        public float VoteAverage { get; set; }
+
+        [JsonProperty("vote_count")]
+        public int VoteCount { get; set; }
     }
 }
