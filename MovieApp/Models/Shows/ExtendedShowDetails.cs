@@ -127,12 +127,6 @@ namespace MovieApp.Models.Shows
         public string ProfilePath { get; set; }
     }
 
-    public class Genre
-    {
-        public int ID { get; set; }
-        public string Name { get; set; }
-    }
-
     public class Network
     {
         public int ID { get; set; }

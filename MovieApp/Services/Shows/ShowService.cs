@@ -1,4 +1,5 @@
-﻿using MovieApp.Models.Shows;
+﻿using MovieApp.Models;
+using MovieApp.Models.Shows;
 using MovieApp.Services.API;
 using System;
 using System.Collections.Generic;
@@ -69,9 +70,9 @@ namespace MovieApp.Services.Shows
             return await apiService.GetAsync<ExtendedEpisodeDetails>($"tv/{ID}/season/{season}/episode/{episode}");
         }
 
-        public Task<TResult> GetGenresAsync()
+        public async Task<GenreList> GetGenresAsync()
         {
-            throw new NotImplementedException();
+            return await apiService.GetAsync<GenreList>("genre/tv/list");
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using MovieApp.Models.Shows;
+﻿using MovieApp.Models;
+using MovieApp.Models.Shows;
 using MovieApp.Services.API;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,6 @@ namespace MovieApp.Services.Shows
         Task<ExtendedSeasonDetails> GetSeasonDetailsByIDAsync(int ID, int season);
         Task<ExtendedEpisodeDetails> GetEpisodeDetailsByIDAsync(int ID, int season, int episode);
 
-        Task<> GetGenresAsync();
+        Task<GenreList> GetGenresAsync();
     }
 }
