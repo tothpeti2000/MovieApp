@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace MovieApp.Models.Shows
 {
     public class Credits
     {
+        [JsonProperty("")]
         public int ID { get; set; }
         public Cast[] Cast { get; set; }
         public Crew[] Crew { get; set; }
@@ -15,31 +17,55 @@ namespace MovieApp.Models.Shows
 
     public class Cast
     {
-        public bool adult { get; set; }
-        public int gender { get; set; }
-        public int id { get; set; }
-        public string known_for_department { get; set; }
-        public string name { get; set; }
-        public string original_name { get; set; }
-        public float popularity { get; set; }
-        public string profile_path { get; set; }
-        public string character { get; set; }
-        public string credit_id { get; set; }
-        public int order { get; set; }
+        public int ID { get; set; }
+
+        [JsonProperty("credit_id")]
+        public string CreditID { get; set; }
+
+        public bool Adult { get; set; }
+        public int Gender { get; set; }
+
+        [JsonProperty("known_for_department")]
+        public string KnownForDepartment { get; set; }
+
+        public string Name { get; set; }
+
+        [JsonProperty("original_name")]
+        public string OriginalName { get; set; }
+
+        public float Popularity { get; set; }
+
+        [JsonProperty("profile_path")]
+        public string ProfilePath { get; set; }
+
+        public string Character { get; set; }
+        public int Order { get; set; }
     }
 
     public class Crew
     {
-        public bool adult { get; set; }
-        public int gender { get; set; }
-        public int id { get; set; }
-        public string known_for_department { get; set; }
-        public string name { get; set; }
-        public string original_name { get; set; }
-        public float popularity { get; set; }
-        public string profile_path { get; set; }
-        public string credit_id { get; set; }
-        public string department { get; set; }
-        public string job { get; set; }
+        public int ID { get; set; }
+
+        [JsonProperty("credit_id")]
+        public string CreditID { get; set; }
+
+        public bool Adult { get; set; }
+        public int Gender { get; set; }
+
+        [JsonProperty("known_for_department")]
+        public string KnownForDepartment { get; set; }
+
+        public string Name { get; set; }
+
+        [JsonProperty("original_name")]
+        public string OriginalName { get; set; }
+
+        public float Popularity { get; set; }
+
+        [JsonProperty("profile_path")]
+        public string ProfilePath { get; set; }
+
+        public string Department { get; set; }
+        public string Job { get; set; }
     }
 }
