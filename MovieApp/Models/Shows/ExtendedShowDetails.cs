@@ -43,7 +43,7 @@ namespace MovieApp.Models.Shows
         [JsonProperty("next_episode_to_air")]
         public ShortEpisodeDetails NextEpisodeToAir { get; set; }
 
-        public Network[] Networks { get; set; }
+        public Company[] Networks { get; set; }
 
         [JsonProperty("number_of_episodes")]
         public int NumberOfEpisodes { get; set; }
@@ -100,17 +100,5 @@ namespace MovieApp.Models.Shows
 
         [JsonProperty("profile_path")]
         public string ProfilePath { get; set; }
-    }
-
-    public class Network
-    {
-        public int ID { get; set; }
-        public string Name { get; set; }
-
-        [JsonProperty("logo_path")]
-        public string LogoPath { get; set; }
-
-        [JsonProperty("origin_country")]
-        public string OriginCountry { get; set; }
     }
 }
