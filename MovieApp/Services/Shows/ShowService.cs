@@ -17,14 +17,14 @@ namespace MovieApp.Services.Shows
             this.apiService = apiService;
         }
 
-        public async Task<PagedResponse<PopularShow>> GetPopularAsync(int page = 1)
+        public async Task<PagedResponse<ShortShowDetails>> GetPopularAsync(int page = 1)
         {
-            return await apiService.GetAsync<PagedResponse<PopularShow>>($"tv/popular?page={page}");
+            return await apiService.GetAsync<PagedResponse<ShortShowDetails>>($"tv/popular?page={page}");
         }
 
-        public async Task<ShowDetails> GetDetailsByIDAsync(int ID)
+        public async Task<ExtendedShowDetails> GetDetailsByIDAsync(int ID)
         {
-            return await apiService.GetAsync<ShowDetails>($"tv/{ID}");
+            return await apiService.GetAsync<ExtendedShowDetails>($"tv/{ID}");
         }
 
         public Task<PagedResponse<T>> GetByGenreAsync()

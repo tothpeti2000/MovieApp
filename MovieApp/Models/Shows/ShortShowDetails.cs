@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MovieApp.Models.Shows
 {
-    public class PopularShow
+    public class ShortShowDetails
     {
         public int ID { get; set; }
 

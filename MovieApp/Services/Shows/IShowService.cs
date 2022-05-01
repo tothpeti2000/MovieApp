@@ -10,8 +10,8 @@ namespace MovieApp.Services.Shows
 {
     public interface IShowService
     {
-        Task<PagedResponse<PopularShow>> GetPopularAsync(int page = 1);
-        Task<ShowDetails> GetDetailsByIDAsync(int ID);
+        Task<PagedResponse<ShortShowDetails>> GetPopularAsync(int page = 1);
+        Task<ExtendedShowDetails> GetDetailsByIDAsync(int ID);
         Task<PagedResponse<>> GetByGenreAsync();
         Task<PagedResponse<>> GetByKeywordsAsync();
         Task<PagedResponse<>> GetByQueryAsync();
