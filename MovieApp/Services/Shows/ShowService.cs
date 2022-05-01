@@ -54,9 +54,9 @@ namespace MovieApp.Services.Shows
             return await apiService.GetAsync<Credits>($"tv/{ID}/credits");
         }
 
-        public Task<PagedResponse<T>> GetSimilarAsync()
+        public async Task<PagedResponse<ShortShowDetails>> GetSimilarByIDAsync(int ID, int page = 1)
         {
-            throw new NotImplementedException();
+            return await apiService.GetAsync<PagedResponse<ShortShowDetails>>($"tv/{ID}/similar?page={page}");
         }
 
         public Task<TResult> GetSeasonDetailsByIDAsync(int ID, int season)
