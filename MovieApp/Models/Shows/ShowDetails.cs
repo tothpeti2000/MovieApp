@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,104 +10,181 @@ namespace MovieApp.Models.Shows
     public class ShowDetails
     {
         public int ID { get; set; }
-        public string Backdrop_Path { get; set; }
-        public Created_By[] Created_By { get; set; }
-        public int[] Episode_Run_Time { get; set; }
-        public string First_Air_Date { get; set; }
+
+        [JsonProperty("backdrop_path")]
+        public string BackdropPath { get; set; }
+
+        [JsonProperty("created_by")]
+        public Creator[] CreatedBy { get; set; }
+
+        [JsonProperty("episode_run_time")]
+        public int[] EpisodeRunTime { get; set; }
+
+        [JsonProperty("first_air_date")]
+        public string FirstAirDate { get; set; }
+
         public Genre[] Genres { get; set; }
-        public string Homepage { get; set; }
-        public bool In_Production { get; set; }
+        public string HomePage { get; set; }
+
+        [JsonProperty("in_production")]
+        public bool InProduction { get; set; }
+
         public string[] Languages { get; set; }
-        public string Last_Air_Date { get; set; }
-        public Last_Episode_To_Air Last_Episode_To_Air { get; set; }
+
+        [JsonProperty("last_air_date")]
+        public string LastAirDate { get; set; }
+
+        [JsonProperty("last_episode_to_air")]
+        public Episode LastEpisodeToAir { get; set; }
+
         public string Name { get; set; }
-        public object Next_Episode_To_Air { get; set; }
+
+        [JsonProperty("next_episode_to_air")]
+        public Episode NextEpisodeToAir { get; set; }
+
         public Network[] Networks { get; set; }
-        public int Number_Of_Episodes { get; set; }
-        public int Number_Of_Seasons { get; set; }
-        public string[] Origin_Country { get; set; }
-        public string Original_Language { get; set; }
-        public string Original_Name { get; set; }
+
+        [JsonProperty("number_of_episodes")]
+        public int NumberOfEpisodes { get; set; }
+
+        [JsonProperty("number_of_seasons")]
+        public int NumberOfSeasons { get; set; }
+
+        [JsonProperty("origin_country")]
+        public string[] OriginCountry { get; set; }
+
+        [JsonProperty("original_language")]
+        public string OriginalLanguage { get; set; }
+
+        [JsonProperty("original_name")]
+        public string OriginalName { get; set; }
+
         public string Overview { get; set; }
         public float Popularity { get; set; }
+
+        [JsonProperty("poster_path")]
         public string Poster_Path { get; set; }
-        public Production_Companies[] Production_Companies { get; set; }
-        public Production_Countries[] Production_Countries { get; set; }
+
+        [JsonProperty("production_companies")]
+        public Company[] ProductionCompanies { get; set; }
+
+        [JsonProperty("production_countries")]
+        public Country[] ProductionCountries { get; set; }
+
         public Season[] Seasons { get; set; }
-        public Spoken_Languages[] Spoken_Languages { get; set; }
+
+        [JsonProperty("spoken_languages")]
+        public Language[] SpokenLanguages { get; set; }
+
         public string Status { get; set; }
-        public string Tagline { get; set; }
+        public string TagLine { get; set; }
         public string Type { get; set; }
-        public float Vote_average { get; set; }
-        public int Vote_count { get; set; }
+
+        [JsonProperty("vote_average")]
+        public float VoteAverage { get; set; }
+
+        [JsonProperty("vote_count")]
+        public int VoteCount { get; set; }
     }
 
-    public class Last_Episode_To_Air
+    public class Episode
     {
-        public string air_date { get; set; }
-        public int episode_number { get; set; }
-        public int id { get; set; }
-        public string name { get; set; }
-        public string overview { get; set; }
-        public string production_code { get; set; }
-        public int season_number { get; set; }
-        public string still_path { get; set; }
-        public float vote_average { get; set; }
-        public int vote_count { get; set; }
+        public int ID { get; set; }
+
+        [JsonProperty("air_date")]
+        public string AirDate { get; set; }
+
+        [JsonProperty("episode_number")]
+        public int EpisodeNumber { get; set; }
+
+        public string Name { get; set; }
+        public string Overview { get; set; }
+
+        [JsonProperty("season_number")]
+        public int SeasonNumber { get; set; }
+
+        [JsonProperty("still_path")]
+        public string StillPath { get; set; }
+
+        [JsonProperty("vote_average")]
+        public float VoteAverage { get; set; }
+
+        [JsonProperty("vote_count")]
+        public int VoteCount { get; set; }
     }
 
-    public class Created_By
+    public class Creator
     {
-        public int id { get; set; }
-        public string credit_id { get; set; }
-        public string name { get; set; }
-        public int gender { get; set; }
-        public string profile_path { get; set; }
+        public int ID { get; set; }
+
+        [JsonProperty("credit_id")]
+        public string CreditID { get; set; }
+
+        public string Name { get; set; }
+        public int Gender { get; set; }
+
+        [JsonProperty("profile_path")]
+        public string ProfilePath { get; set; }
     }
 
     public class Genre
     {
-        public int id { get; set; }
-        public string name { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
     }
 
     public class Network
     {
-        public string name { get; set; }
-        public int id { get; set; }
-        public string logo_path { get; set; }
-        public string origin_country { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+
+        [JsonProperty("logo_path")]
+        public string LogoPath { get; set; }
+
+        [JsonProperty("origin_country")]
+        public string[] OriginCountry { get; set; }
     }
 
-    public class Production_Companies
+    public class Company
     {
-        public int id { get; set; }
-        public string logo_path { get; set; }
-        public string name { get; set; }
-        public string origin_country { get; set; }
+        public int ID { get; set; }
+
+        [JsonProperty("logo_path")]
+        public string LogoPath { get; set; }
+
+        public string Name { get; set; }
+
+        [JsonProperty("origin_country")]
+        public string[] OriginCountry { get; set; }
     }
 
-    public class Production_Countries
+    public class Country
     {
-        public string iso_3166_1 { get; set; }
-        public string name { get; set; }
+        public string Name { get; set; }
     }
 
     public class Season
     {
-        public string air_date { get; set; }
-        public int episode_count { get; set; }
-        public int id { get; set; }
-        public string name { get; set; }
-        public string overview { get; set; }
-        public string poster_path { get; set; }
-        public int season_number { get; set; }
+        public int ID { get; set; }
+
+        [JsonProperty("air_date")]
+        public string AirDate { get; set; }
+
+        [JsonProperty("episode_count")]
+        public int EpisodeCount { get; set; }
+
+        public string Name { get; set; }
+        public string Overview { get; set; }
+
+        [JsonProperty("poster_path")]
+        public string PosterPath { get; set; }
+
+        [JsonProperty("season_number")]
+        public int SeasonNumber { get; set; }
     }
 
-    public class Spoken_Languages
+    public class Language
     {
-        public string english_name { get; set; }
-        public string iso_639_1 { get; set; }
-        public string name { get; set; }
+        public string Name { get; set; }
     }
 }
