@@ -11,6 +11,7 @@ namespace MovieApp.Services.Movies
 {
     public interface IMovieService
     {
+        Task<PagedResponse<ShortMovieDetails>> GetPopularAsync(int page = 1);
         Task<PagedResponse<ShortMovieDetails>> GetByGenreAsync(int genreID, int page = 1);
         Task<PagedResponse<ShortMovieDetails>> GetByKeywordsAsync(int[] keywordIDs, int page = 1);
 

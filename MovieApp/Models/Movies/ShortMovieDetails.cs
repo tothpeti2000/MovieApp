@@ -9,6 +9,8 @@ namespace MovieApp.Models.Movies
 {
     public class ShortMovieDetails
     {
+        public int ID { get; set; }
+
         [JsonProperty("poster_path")]
         public string PosterPath { get; set; }
 
