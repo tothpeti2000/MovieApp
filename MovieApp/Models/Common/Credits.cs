@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieApp.Models.Shows
+namespace MovieApp.Models.Common
 {
     public class Credits
     {

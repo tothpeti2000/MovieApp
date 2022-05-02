@@ -1,4 +1,5 @@
 ﻿using MovieApp.Models;
+using MovieApp.Models.Common;
 using MovieApp.Models.Shows;
 using MovieApp.Services.API;
 using System;
