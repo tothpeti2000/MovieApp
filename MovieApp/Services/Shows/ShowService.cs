@@ -35,12 +35,7 @@ namespace MovieApp.Services.Shows
 
         public async Task<PagedResponse<ShortShowDetails>> GetByKeywordsAsync(int[] keywordIDs)
         {
-            string fullKeywordIDs = "";
-
-            foreach (var keywordID in keywordIDs)
-            {
-                fullKeywordIDs += $"{keywordID},";
-            }
+            string fullKeywordIDs = string.Join(",", keywordIDs);
 
             return await apiService.GetAsync<PagedResponse<ShortShowDetails>>($"discover/tv?with_keywords={fullKeywordIDs}");
         }
