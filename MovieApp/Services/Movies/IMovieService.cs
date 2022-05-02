@@ -1,4 +1,5 @@
-﻿using MovieApp.Models.Movies;
+﻿using MovieApp.Models;
+using MovieApp.Models.Movies;
 using MovieApp.Services.API;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,7 @@ namespace MovieApp.Services.Movies
     {
         Task<PagedResponse<ShortMovieDetails>> GetByGenreAsync(int genreID, int page = 1);
         Task<PagedResponse<ShortMovieDetails>> GetByKeywordsAsync(int[] keywordIDs, int page = 1);
+
+        Task<GenreList> GetGenresAsync();
     }
 }
