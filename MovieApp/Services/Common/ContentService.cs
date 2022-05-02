@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MovieApp.Services.Common
 {
-    public class ContentService<T1, T2> : IContentService<T1, T2>
+    public abstract class ContentService<T1, T2> : IContentService<T1, T2>
     {
         private readonly IApiService apiService;
         private readonly string contentType;
