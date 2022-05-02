@@ -135,6 +135,8 @@
     <Compile Include="Services\API\ApiService.cs" />
     <Compile Include="Services\API\IApiService.cs" />
     <Compile Include="Services\API\PagedResponse.cs" />
+    <Compile Include="Services\Common\ContentService.cs" />
+    <Compile Include="Services\Common\IContentService.cs" />
     <Compile Include="Services\Movies\IMovieService.cs" />
     <Compile Include="Services\Movies\MovieService.cs" />
     <Compile Include="Services\Shows\IShowService.cs" />
