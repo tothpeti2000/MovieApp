@@ -133,6 +133,8 @@
     <Compile Include="Services\API\ApiService.cs" />
     <Compile Include="Services\API\IApiService.cs" />
     <Compile Include="Services\API\PagedResponse.cs" />
+    <Compile Include="Services\Movies\IMovieService.cs" />
+    <Compile Include="Services\Movies\MovieService.cs" />
     <Compile Include="Services\Shows\IShowService.cs" />
     <Compile Include="Services\Shows\ShowService.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
@@ -176,13 +178,15 @@
     <PackageReference Include="Microsoft.UI.Xaml">
       <Version>2.8.0-prerelease.220413001</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Template10">
       <Version>1.1.12</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Movies\" />
-    <Folder Include="Services\Movies\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

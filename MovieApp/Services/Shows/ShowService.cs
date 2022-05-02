@@ -28,16 +28,16 @@ namespace MovieApp.Services.Shows
             return await apiService.GetAsync<ExtendedShowDetails>($"tv/{ID}");
         }
 
-        public async Task<PagedResponse<ShortShowDetails>> GetByGenreAsync(int genreID)
+        public async Task<PagedResponse<ShortShowDetails>> GetByGenreAsync(int genreID, int page = 1)
         {
-            return await apiService.GetAsync<PagedResponse<ShortShowDetails>>($"discover/tv?with_genres={genreID}");
+            return await apiService.GetAsync<PagedResponse<ShortShowDetails>>($"discover/tv?with_genres={genreID}&page={page}");
         }
 
-        public async Task<PagedResponse<ShortShowDetails>> GetByKeywordsAsync(int[] keywordIDs)
+        public async Task<PagedResponse<ShortShowDetails>> GetByKeywordsAsync(int[] keywordIDs, int page = 1)
         {
             string fullKeywordIDs = string.Join(",", keywordIDs);
 
-            return await apiService.GetAsync<PagedResponse<ShortShowDetails>>($"discover/tv?with_keywords={fullKeywordIDs}");
+            return await apiService.GetAsync<PagedResponse<ShortShowDetails>>($"discover/tv?with_keywords={fullKeywordIDs}&page={page}");
         }
 
         public async Task<PagedResponse<ShortShowDetails>> GetByQueryAsync(string query, int page = 1)
