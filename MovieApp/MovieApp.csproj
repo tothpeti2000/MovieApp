@@ -124,6 +124,7 @@
     <Compile Include="Models\Common\GenreList.cs" />
     <Compile Include="Models\Common\Credits.cs" />
     <Compile Include="Models\Common\Language.cs" />
+    <Compile Include="Models\Movies\ExtendedMovieDetails.cs" />
     <Compile Include="Models\Movies\ShortMovieDetails.cs" />
     <Compile Include="Models\Shows\ExtendedEpisodeDetails.cs" />
     <Compile Include="Models\Shows\ExtendedSeasonDetails.cs" />
