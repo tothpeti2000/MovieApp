@@ -144,6 +144,7 @@
     <Compile Include="Services\Movies\MovieService.cs" />
     <Compile Include="Services\Shows\IShowService.cs" />
     <Compile Include="Services\Shows\ShowService.cs" />
+    <Compile Include="ViewModels\PopularShowsPageViewModel.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

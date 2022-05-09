@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="MovieApp.Views.PopularShowsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:MovieApp.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:MovieApp.ViewModels"
+    Background="{StaticResource BackgroundColor}"
+    mc:Ignorable="d">
+
+    <!--<Page.DataContext>
+        <vm:PopularShowsPageViewModel x:Name="ViewModel" />
+    </Page.DataContext>
+
+    <Grid>
+        <GridView
+            Padding="18"
+            IsItemClickEnabled="True"
+            ItemsSource="{Binding PopularShows}">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="250" Height="250">
+                        <Image
+                            VerticalAlignment="Center"
+                            Source="{Binding BackgroundImage}"
+                            Stretch="UniformToFill" />
+                        <Border VerticalAlignment="Bottom" Background="#AA000000">
+                            <TextBlock
+                                Margin="12"
+                                Foreground="White"
+                                Text="{Binding Name}" />
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+    </Grid>-->
+</Page>

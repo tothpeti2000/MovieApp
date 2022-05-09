@@ -7,8 +7,13 @@
     xmlns:local="using:MovieApp"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:vm="using:MovieApp.ViewModels"
     Background="{StaticResource BackgroundColor}"
     mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:MainPageViewModel x:Name="ViewModel" />
+    </Page.DataContext>
 
     <StackPanel>
         <Grid>
@@ -62,7 +67,7 @@
                 Grid.Column="1"
                 Padding="90">
 
-                <Button>
+                <Button Command="{Binding NavigateCommand}">
                     <Button.Background>
                         <ImageBrush ImageSource="/Assets/show.jpg" />
                     </Button.Background>
