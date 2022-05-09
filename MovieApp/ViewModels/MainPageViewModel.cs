@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Template10.Mvvm;
+using Template10.Services.NavigationService;
 
 namespace MovieApp.ViewModels
 {
@@ -12,7 +13,7 @@ namespace MovieApp.ViewModels
     {
         public DelegateCommand NavigateCommand { get; set; }
 
-        public MainPageViewModel(): base()
+        public MainPageViewModel()
         {
             NavigateCommand = new DelegateCommand(NavigateToPopularShows);
         }

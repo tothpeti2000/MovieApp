@@ -28,12 +28,6 @@ namespace MovieApp
         public MainPage()
         {
             this.InitializeComponent();
-            //FetchData();
-        }
-
-        public async void FetchData()
-        {
-            var data = await new ShowService(new ApiService()).GetDetailsByIDAsync(1418);
         }
     }
 }

@@ -1,6 +1,9 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Autofac;
 using MovieApp.Services.API;
+using MovieApp.Services.Common;
+using MovieApp.Services.Movies;
 using MovieApp.Services.Shows;
+using MovieApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,7 +28,7 @@ namespace MovieApp
     /// </summary>
     sealed partial class App : Application
     {
-        public IServiceScope Container { get; }
+        public static IContainer Container { get; private set; }
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -34,8 +37,9 @@ namespace MovieApp
         public App()
         {
             this.InitializeComponent();
-            this.Suspending += OnSuspending;
             Container = ConfigureDI();
+
+            this.Suspending += OnSuspending;
         }
 
         /// <summary>
@@ -103,16 +107,28 @@ namespace MovieApp
             deferral.Complete();
         }
 
-        private IServiceScope ConfigureDI()
+        private IContainer ConfigureDI()
         {
-            var serviceCollection = new ServiceCollection();
+            var containerBuilder = new ContainerBuilder();
 
-            serviceCollection.AddScoped<IApiService, ApiService>();
-            serviceCollection.AddScoped<IShowService, ShowService>();
+            containerBuilder.RegisterType<ApiService>()
+                .As<IApiService>();
 
-            var serviceProvider = serviceCollection.BuildServiceProvider();
+            containerBuilder.RegisterType<ShowService>()
+                .As<IShowService>();
 
-            return serviceProvider.CreateScope();
+            containerBuilder.RegisterType<MovieService>()
+                .As<IMovieService>();
+
+            containerBuilder.RegisterType<MainPageViewModel>()
+                .AsSelf();
+
+            containerBuilder.RegisterType<PopularShowsPageViewModel>()
+                .AsSelf();
+
+            var container = containerBuilder.Build();
+
+            return container;
         }
     }
 }
